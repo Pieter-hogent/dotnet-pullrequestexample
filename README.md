@@ -3,29 +3,34 @@
 ## Team Members
 - [MEMBER1_NAME] - [MEMBER1_EMAIL] - [MEMBER1_GITHUB_USERNAME]
 
-## Technologies Used
-- [FILLIN] 
-- [FILLIN]
-- [FILLIN]
+## Technologies & Packages Used
+- [Blazor](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) - Frontend
+- [ASP.NET 8](https://dotnet.microsoft.com/en-us/apps/aspnet) - Backend
+- [Entity Framework 8](https://learn.microsoft.com/en-us/ef/) - Database Access
+- [EntityFrameworkCore Triggered](https://github.com/koenbeuk/EntityFrameworkCore.Triggered) - Database Triggers
+- [User Secrets](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets) - Securely store secrets in DEV.
+- [GuardClauses](https://github.com/ardalis/GuardClauses) - Validation Helper
+- [bUnit](https://bunit.dev) - Blazor Component Testing
+- [xUnit](https://xunit.net) - (Unit) Testing
+- [nSubstitute](https://nsubstitute.github.io) - Mocking for testing
+- [Shouldly](https://docs.shouldly.org) - Helper for testing
 
 ## Installation Instructions
 1. Clone the repository
-2. ... [FILLIN]
+2. Open the `Rise.sln` file in Visual Studio or Visual Studio Code
+3. Run the project using the `Rise.Server` project as the startup project
+4. The project should open in your default browser on port 5001.
+5. Initially the database will not exist, so you will need to run the migrations to create the database.
 
-
-## Migration of the database
-There is a default database that is used for this project. The intial migrations was already created using the following command:
-```
-dotnet ef migrations add Initial --startup-project Rise.Server --project Rise.Persistence
-```
-> Note: The migrations are stored in the `Rise.Persistence/Migrations` folder.
-To create the database, run the following command:
+## Creation of the database
+To create the database, run the following command in the main folder `Rise`
 ```
 dotnet ef database update --startup-project Rise.Server --project Rise.Persistence
 ```
 > Make sure your connection string is correct in the `Rise/Server/appsettings.json` file.
 
-For future migrations, you can create a new migration using the following command:
+## Migrations
+Adapting the database schema can be done using migrations. To create a new migration, run the following command:
 ```
 dotnet ef migrations add [MIGRATION_NAME] --startup-project Rise.Server --project Rise.Persistence
 ```
