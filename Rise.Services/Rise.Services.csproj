@@ -7,12 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Products\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Products\" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Rise.Shared\Rise.Shared.csproj" />
     <ProjectReference Include="..\Rise.Persistence\Rise.Persistence.csproj" />
   </ItemGroup>

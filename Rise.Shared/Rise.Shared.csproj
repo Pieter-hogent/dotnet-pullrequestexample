@@ -9,10 +9,4 @@
   <ItemGroup>
     <SupportedPlatform Include="browser" />
   </ItemGroup>
-  <ItemGroup>
-    <None Remove="Products\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Products\" />
-  </ItemGroup>
 </Project>

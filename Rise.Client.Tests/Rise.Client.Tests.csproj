@@ -37,16 +37,6 @@
 		  </PackageReference>
 	</ItemGroup>
 
-
-
-	<ItemGroup>
-	  <None Remove="Pages\" />
-	  <None Remove="Products\" />
-	</ItemGroup>
-	<ItemGroup>
-	  <Folder Include="Pages\" />
-	  <Folder Include="Products\" />
-	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\Rise.Client\Rise.Client.csproj" />
 	</ItemGroup>

@@ -19,10 +19,4 @@
     <ProjectReference Include="..\Rise.Domain\Rise.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Triggers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Triggers\" />
-  </ItemGroup>
 </Project>
