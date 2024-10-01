@@ -4,6 +4,7 @@ using Rise.Client;
 using Rise.Client.Products;
 using Rise.Shared.Products;
 using Microsoft.AspNetCore.Components.WebAssembly.Authentication;
+using Rise.Client.Auth;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -16,7 +17,7 @@ builder.Services.AddOidcAuthentication(options =>
     options.ProviderOptions.ResponseType = "code";
     options.ProviderOptions.PostLogoutRedirectUri = builder.HostEnvironment.BaseAddress;
     options.ProviderOptions.AdditionalProviderParameters.Add("audience", builder.Configuration["Auth0:Audience"]!);
-});
+}).AddAccountClaimsPrincipalFactory<ArrayClaimsPrincipalFactory<RemoteUserAccount>>();
 
 builder.Services.AddHttpClient<IProductService, ProductService>(client =>
 {
