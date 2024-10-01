@@ -39,6 +39,10 @@ And then update the database using the following command:
 dotnet ef database update --startup-project Rise.Server --project Rise.Persistence
 ```
 
+## Authentication
+In the `main` branch, there is no authentication present. You can switch to the [auth](https://github.com/HOGENT-RISE/dotnet-template/tree/auth) branch and checkout the commits from "Authenticating Client With Auth0" forward to the last commit to see how to authenticate your users using [Auth0](https://auth0.com).
+There are a few articles which explain what is done. It's best to start from the first one and sequentially go through them by starting with [Blazor Authentication with Auth0](https://benjaminvertonghen.medium.com/role-based-acces-control-with-blazor-and-auth0-i-ffd9656e6f01)
+
 ## Solution Structure Overview
 
 The template is designed as a boilerplate or template for .NET solutions, following best practices for structuring projects, separation of concerns, and maintainability. Here's a breakdown of the solution structure and its workings, explained:
