@@ -4,7 +4,7 @@ using Rise.Shared.Products;
 namespace Rise.Server.Controllers;
 
 [ApiController]
-[Route("[controller]")]
+[Route("api/[controller]")]
 public class ProductController : ControllerBase
 {
     private readonly IProductService productService;

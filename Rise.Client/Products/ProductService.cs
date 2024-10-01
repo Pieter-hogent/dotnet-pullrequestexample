@@ -14,7 +14,7 @@ public class ProductService : IProductService
 
     public async Task<IEnumerable<ProductDto>> GetProductsAsync()
     {
-        var products = await httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("Product");
+        var products = await httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("product");
         return products!;
     }
 }
