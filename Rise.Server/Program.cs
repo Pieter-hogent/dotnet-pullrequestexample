@@ -1,3 +1,4 @@
+using Auth0Net.DependencyInjection;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Rise.Persistence;
@@ -24,6 +25,15 @@ builder.Services.AddAuthentication(options =>
         NameClaimType = ClaimTypes.NameIdentifier
     };
 });
+
+builder.Services.AddAuth0AuthenticationClient(config =>
+{
+    config.Domain = builder.Configuration["Auth0:Authority"]!;
+    config.ClientId = builder.Configuration["Auth0:M2MClientId"];
+    config.ClientSecret = builder.Configuration["Auth0:M2MClientSecret"];
+});
+
+builder.Services.AddAuth0ManagementClient().AddManagementAccessToken();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
