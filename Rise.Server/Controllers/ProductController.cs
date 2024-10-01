@@ -20,11 +20,15 @@ public class ProductController : ControllerBase
     [Authorize(Roles = Role.Administrator)]
     public async Task<IEnumerable<ProductDto>> Get()
     {
+        Console.WriteLine("Logging from Controller");
+        Console.WriteLine("=====================================");
         foreach (var claim in User.Claims)
         {
             Console.WriteLine($"{claim.Type}: {claim.Value}");
         }
         Console.WriteLine("User is in role 'Administrator': {0}", User.IsInRole("Administrator"));
+        Console.WriteLine("User is {0}", User.Identity!.Name);
+        Console.WriteLine("=====================================");
         var products = await productService.GetProductsAsync();
         return products;
     }

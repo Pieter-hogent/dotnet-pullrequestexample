@@ -6,6 +6,8 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Rise.Persistence;
 using Rise.Persistence.Triggers;
+using Rise.Server.Auth;
+using Rise.Services.Auth;
 using Rise.Services.Products;
 using Rise.Shared.Products;
 
@@ -75,6 +77,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddHttpContextAccessor()
+                .AddScoped<IAuthContextProvider, HttpContextAuthProvider>();
 
 var app = builder.Build();
 
