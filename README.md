@@ -23,6 +23,11 @@
 5. Initially the database will not exist, so you will need to run the migrations to create the database.
 
 ## Creation of the database
+Install the dotnet ef tool globally by running the following command in your terminal (only do this once)
+```
+dotnet tool install --global dotnet-ef
+```
+
 To create the database, run the following command in the main folder `Rise`
 ```
 dotnet ef database update --startup-project Rise.Server --project Rise.Persistence
