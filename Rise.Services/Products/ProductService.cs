@@ -13,6 +13,11 @@ public class ProductService : IProductService
         this.dbContext = dbContext;
     }
 
+    public Task<ProductDto> GetProductAsync(int productId)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<IEnumerable<ProductDto>> GetProductsAsync()
     {
         IQueryable<ProductDto> query = dbContext.Products.Select(x => new ProductDto

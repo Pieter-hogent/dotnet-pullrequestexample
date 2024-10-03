@@ -1,0 +1,26 @@
+﻿@page "/products/{productId:int}"
+@inject IProductService ProductService
+@using Rise.Shared.Products
+
+@if (product is null)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <PageTitle>@product.Name</PageTitle>
+    <p>@product.Name</p>
+}
+
+@code {
+    [Parameter] public int ProductId { get; set; }
+    private ProductDto? product;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Console.WriteLine($"ProductId: {ProductId}");
+
+        product = await ProductService.GetProductAsync(ProductId);
+
+    }
+}

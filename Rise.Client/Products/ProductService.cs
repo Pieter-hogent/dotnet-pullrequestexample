@@ -12,6 +12,11 @@ public class ProductService : IProductService
         this.httpClient = httpClient;
     }
 
+    public Task<ProductDto> GetProductAsync(int productId)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<IEnumerable<ProductDto>> GetProductsAsync()
     {
         var products = await httpClient.GetFromJsonAsync<IEnumerable<ProductDto>>("product");
