@@ -12,9 +12,10 @@ public class ProductService : IProductService
         this.httpClient = httpClient;
     }
 
-    public Task<ProductDto> GetProductAsync(int productId)
+    public async Task<ProductDto> GetProductAsync(int productId)
     {
-        throw new NotImplementedException();
+        var product = await httpClient.GetFromJsonAsync<ProductDto>($"product/{productId}");
+        return product;
     }
 
     public async Task<IEnumerable<ProductDto>> GetProductsAsync()

@@ -20,4 +20,12 @@ public class ProductController : ControllerBase
         var products = await productService.GetProductsAsync();
         return products;
     }
+
+    [HttpGet("{productId}")]
+    public async Task<ProductDto> Get(int productId)
+    {
+        var product = await productService.GetProductAsync(productId);
+        return product;
+
+    }
 }

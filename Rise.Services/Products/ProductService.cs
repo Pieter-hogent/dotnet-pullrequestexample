@@ -13,9 +13,10 @@ public class ProductService : IProductService
         this.dbContext = dbContext;
     }
 
-    public Task<ProductDto> GetProductAsync(int productId)
+    public async Task<ProductDto> GetProductAsync(int productId)
     {
-        throw new NotImplementedException();
+        var product = await dbContext.Products.Select(x => new ProductDto{ Id = x.Id, Name = x.Name}).SingleAsync(p => p.Id == productId);
+        return product;
     }
 
     public async Task<IEnumerable<ProductDto>> GetProductsAsync()

@@ -14,5 +14,11 @@ public class FakeProductService : IProductService
 
         return Task.FromResult(products);
     }
+
+    public Task<ProductDto> GetProductAsync(int productId)
+    {
+	    var product = new ProductDto{Id = 7, Name = $"Product 7"};
+	    return Task.FromResult(product);
+    }
 }
 
